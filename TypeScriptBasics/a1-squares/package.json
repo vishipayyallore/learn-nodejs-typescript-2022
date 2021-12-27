@@ -7,7 +7,7 @@
     "build": "tsc -w",
     "execute": "node ./lib/index.js",
     "start": "nodemon ./lib/index.js",
-    "dev": "concurrently \"npm run build\" \"npm run execute\""
+    "dev": "concurrently \"npm run build\" \"npm run start\""
   },
   "author": "Viswanatha Swamy P K",
   "license": "MIT",
