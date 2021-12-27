@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "build": "tsc -w",
-    "start": "node ./lib/index.js",
-    "execute": "nodemon ./lib/index.js",
+    "execute": "node ./lib/index.js",
+    "start": "nodemon ./lib/index.js",
     "dev": "concurrently \"npm run build\" \"npm run execute\""
   },
   "author": "Viswanatha Swamy P K",

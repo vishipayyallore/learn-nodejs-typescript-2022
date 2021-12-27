@@ -7,4 +7,4 @@ const logMessage = (message: string): void => {
 const values = [2, 3, 4, 5];
 logMessage(`square(${values}) = ${squares(values)}`);
 
-logMessage('Hello World !! $$ ## %%');
+logMessage('Hello World !! $$ ## %% ** &&');
