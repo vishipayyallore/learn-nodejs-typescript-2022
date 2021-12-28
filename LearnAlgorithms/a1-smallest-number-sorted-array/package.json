@@ -1,0 +1,23 @@
+{
+  "name": "a1-smallest-number-sorted-array",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc -w",
+    "execute": "node ./lib/index.js",
+    "start": "nodemon ./lib/index.js",
+    "dev": "concurrently \"npm run build\" \"npm run start\""
+  },
+  "keywords": [],
+  "author": "Viswanatha Swamy P K",
+  "license": "MIT",
+  "dependencies": {
+    "ts-node": "^10.4.0",
+    "typescript": "^4.5.4"
+  },
+  "devDependencies": {
+    "concurrently": "^6.5.1",
+    "nodemon": "^2.0.15"
+  }
+}
