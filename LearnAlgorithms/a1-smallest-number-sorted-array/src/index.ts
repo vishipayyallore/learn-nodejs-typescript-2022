@@ -8,7 +8,7 @@ const performAbsoluteValuesSumMinimization = (values: number[][]) => {
 
     values.forEach((value, index) => {
         // @ts-ignore
-        console.log(`${index + 1}. "${value}" === "${absoluteValuesSumMinimization(value)}"\n`);
+        logMessage(`${index + 1}. "${value}" === "${absoluteValuesSumMinimization(value)}"\n`);
     });
 };
 
