@@ -1,10 +1,4 @@
-const sumNumbers = (...values: number[]): number => {
-    let sum = 0;
-
-    values.forEach((value) => sum += value);
-
-    return sum;
-}
+import {sumNumbers} from './sumNumbers';
 
 console.log(sumNumbers());
 console.log(sumNumbers(2));
