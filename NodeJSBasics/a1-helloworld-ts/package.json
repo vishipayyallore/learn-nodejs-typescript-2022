@@ -1,0 +1,24 @@
+{
+  "name": "a1-helloworld-ts",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "execute": "node ./lib/index.js",
+    "start": "nodemon ./lib/index.js",
+    "dev": "concurrently \"npm run build\" \"npm run start\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ts-node": "^10.4.0",
+    "typescript": "^4.5.4"
+  },
+  "devDependencies": {
+    "@types/node": "^17.0.8",
+    "concurrently": "^7.0.0",
+    "nodemon": "^2.0.15"
+  }
+}
