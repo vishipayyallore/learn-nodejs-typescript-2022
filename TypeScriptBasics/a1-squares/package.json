@@ -6,8 +6,8 @@
   "scripts": {
     "build": "tsc",
     "build-watch": "tsc -w",
-    "execute": "npm run build && node ./lib/index.js",
-    "start": "nodemon ./lib/index.js",
+    "execute": "npm run build && node ./dist/index.js",
+    "start": "nodemon ./dist/index.js",
     "dev": "concurrently \"npm run build-watch\" \"npm run start\""
   },
   "author": "Viswanatha Swamy P K",
