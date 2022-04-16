@@ -4,10 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "tsc -w",
-    "execute": "node ./lib/index.js",
+    "build": "tsc",
+    "build-watch": "tsc -w",
+    "execute": "npm run build && node ./lib/index.js",
     "start": "nodemon ./lib/index.js",
-    "dev": "concurrently \"npm run build\" \"npm run start\""
+    "dev": "concurrently \"npm run build-watch\" \"npm run start\""
   },
   "keywords": [],
   "author": "Viswanatha Swamy P K",

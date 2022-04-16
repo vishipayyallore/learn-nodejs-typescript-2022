@@ -4,16 +4,17 @@
   "description": "Day 1 Learning TypeScript",
   "main": "index.js",
   "scripts": {
-    "build": "tsc -w",
-    "execute": "node ./lib/index.js",
+    "build": "tsc",
+    "build-watch": "tsc -w",
+    "execute": "npm run build && node ./lib/index.js",
     "start": "nodemon ./lib/index.js",
-    "dev": "concurrently \"npm run build\" \"npm run start\""
+    "dev": "concurrently \"npm run build-watch\" \"npm run start\""
   },
   "author": "Viswanatha Swamy P K",
   "license": "MIT",
   "dependencies": {
-    "ts-node": "^10.4.0",
-    "typescript": "^4.5.4"
+    "ts-node": "^10.7.0",
+    "typescript": "^4.6.3"
   },
   "devDependencies": {
     "concurrently": "^6.5.1",
