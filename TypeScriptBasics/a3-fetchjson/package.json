@@ -1,0 +1,15 @@
+{
+  "name": "a3-fetchjson",
+  "version": "1.0.0",
+  "description": "Simple Project in TypeScript`",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Viswanatha Swamy",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.27.2"
+  }
+}
