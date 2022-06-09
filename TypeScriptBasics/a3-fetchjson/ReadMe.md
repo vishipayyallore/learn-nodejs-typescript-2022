@@ -10,6 +10,17 @@ URL: https://jsonplaceholder.typicode.com/
 npm init -y
 
 npm install axios
+```
 
+### Compile
 
+```
+tsc
+```
+
+### Run
+
+```
+npm start
+npm run dev
 ```
