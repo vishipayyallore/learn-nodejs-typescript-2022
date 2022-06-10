@@ -8,6 +8,7 @@ URL: https://jsonplaceholder.typicode.com/
 
 ```
 npm init -y
+tsc --init
 
 npm install axios
 ```
