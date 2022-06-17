@@ -1,0 +1,22 @@
+{
+  "name": "a8-tuplesdemo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "build-watch": "tsc -w",
+    "execute": "npm run build && node ./dist/index.js",
+    "start": "nodemon ./dist/index.js",
+    "dev": "concurrently -k -n \"COMPILER,NODEMON\" -c \"yellow,blue\" \"npm run build-watch\" \"npm run start\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "concurrently": "^7.2.1",
+    "nodemon": "^2.0.16",
+    "ts-node": "^10.8.1",
+    "typescript": "^4.7.3"
+  }
+}
