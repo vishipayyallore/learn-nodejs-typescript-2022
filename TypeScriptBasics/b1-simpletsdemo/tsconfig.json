@@ -2,6 +2,8 @@
     "compilerOptions": {
         "target": "ES2020" /* Set the JavaScript language version for emitted JavaScript and include compatible library declarations. */,
 
+        "jsx": "react" /* Specify what JSX code is generated. */,
+
         "module": "commonjs" /* Specify what module code is generated. NodeJS uses commonjs */,
         "rootDir": "./src" /* Specify the root folder within your source files. */,
         "outDir": "./dist" /* Specify an output folder for all emitted files. */,
@@ -104,5 +106,5 @@
         // "skipDefaultLibCheck": true,                      /* Skip type checking .d.ts files that are included with TypeScript. */
         // "skipLibCheck": true                                 /* Skip type checking all .d.ts files. */
     },
-    "include": ["src/**/*.ts"]
+    "include": ["src/**/*.ts", "src/**/*.jsx", "src/**/*.tsx"],
 }
