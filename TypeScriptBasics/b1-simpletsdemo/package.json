@@ -9,6 +9,9 @@
   "author": "Viswanatha Swamy P K",
   "license": "MIT",
   "devDependencies": {
+    "concurrently": "^7.2.2",
+    "nodemon": "^2.0.16",
+    "ts-node": "^10.8.1",
     "typescript": "^4.7.4"
   }
 }
