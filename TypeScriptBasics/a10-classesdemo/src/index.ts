@@ -1,6 +1,6 @@
 class Vehicle {
 
-    constructor(public make: string, public model: string, public color: string) {
+    constructor(protected make: string, protected model: string, protected color: string) {
         this.make = make;
         this.model = model;
         this.color = color;
@@ -10,14 +10,10 @@ class Vehicle {
         console.log("Honking :: beep!");
     }
 
-    protected describeVehicle(): void {
-        console.log(`Make: ${vehicle.make}`);
-        console.log(`Model: ${vehicle.model}`);
-        console.log(`Color: ${vehicle.color}`);
-    }
 }
 
 const vehicle = new Vehicle("Ford", "Mustang", "red");
+console.log(`JSON.stringify(vehicle) :: ${JSON.stringify(vehicle)}`);
 
 class Car extends Vehicle {
     constructor(public wheels: number, make: string, model: string, color: string) {
@@ -28,17 +24,21 @@ class Car extends Vehicle {
         console.log("Driving :: vroom!");
     }
 
+    private describeCar(): void {
+        console.log(`Make: ${this.make}`);
+        console.log(`Model: ${this.model}`);
+        console.log(`Color: ${this.color}`);
+        console.log(`Wheels: ${this.wheels}`);
+    }
+
     public startDrivingProcess(): void {
         this.describeCar();
         this.drive();
         this.honk();
     }
 
-    private describeCar(): void {
-        this.describeVehicle();
-        console.log(`Wheels: ${this.wheels}`);
-    }
 }
 
 const car = new Car(4, "Ford", "Mustang", "red");
+console.log(`JSON.stringify(car) :: ${JSON.stringify(car)}`);
 car.startDrivingProcess();
