@@ -3,3 +3,10 @@
 ## React Redux Type Script Todo
 
 > 1. To be done.
+
+### Commands
+```
+npx create-react-app todo-rrts --template typescript
+
+npm install redux react-redux axios redux-thunk
+```
