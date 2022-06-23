@@ -1,8 +1,19 @@
 import React from "react";
 
-export class App extends React.Component{
+const divStyle = {
+    color: 'blue',
+    paddingLeft: 20,
+    border: 'solid',
+    margin: 20
+};
+
+export class App extends React.Component {
 
     render() {
-        return <h1>Hello There !</h1>
+        return (
+            <div style={divStyle}>
+                <h1>Hi There !</h1>
+            </div>
+        );
     }
 }
