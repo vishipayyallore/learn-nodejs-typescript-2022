@@ -1,12 +1,19 @@
 import React from "react";
 import { connect } from "react-redux";
-import { Todo, fetchTodos } from "../actions";
+import { Todo, fetchTodos, deleteTodo } from "../actions";
 import { StoreState } from "../reducers";
 
 interface AppProperties {
     todos: Todo[],
 
-    fetchTodos(): any
+    // fetchTodos: typeof fetchTodos;
+    fetchTodos: Function;
+
+    deleteTodo: typeof deleteTodo;
+}
+
+interface AppState {
+    fetching: boolean;
 }
 
 const mapStoreState = ({ todos }: StoreState): { todos: Todo[] } => {
@@ -24,24 +31,57 @@ const divStyle = {
 const divTodoStyle = {
     color: 'orangered',
     fontWeight: 'bold',
-    margin: 20
+    border: 'solid',
+    borderColor: 'maroon',
+    margin: 20,
+    padding: 10
 };
 
-class _App extends React.Component<AppProperties> {
+class _App extends React.Component<AppProperties, AppState> {
 
     // componentDidMount() {
     //     this.props.fetchTodos();
     // }
 
+    constructor(props: AppProperties) {
+        super(props);
+
+        this.state = { fetching: false }
+    }
+
+    componentDidUpdate(prevProps: AppProperties): void {
+        console.log(`${this.state.fetching} :: ${prevProps.todos.length} :: ${this.props.todos.length}`)
+
+        // if (this.state.fetching) {
+        //     this.setState({ fetching: false });
+        // }
+
+        if (this.state.fetching && (prevProps.todos.length || this.props.todos.length)) {
+            console.log('SETTING IT TO FALSE !');
+            if (this.state.fetching) {
+                this.setState({ fetching: false });
+            }
+        }
+    };
+
     onButtonClick = (): void => {
+        this.setState({ fetching: true });
         this.props.fetchTodos();
+    };
+
+    onTodoClick = (id: number): void => {
+        this.props.deleteTodo(id);
     };
 
     renderList(): JSX.Element[] {
         return this.props.todos.map((todo: Todo) => {
-            return <div key={todo.id} style={divTodoStyle}>{todo.id}. {todo.title}</div>
+            return (
+                <div style={divTodoStyle} onClick={() => this.onTodoClick(todo.id)} key={todo.id}>
+                    {todo.title}
+                </div>
+            );
         });
-    };
+    }
 
     render() {
         // console.log(this.props.todos);
@@ -49,6 +89,9 @@ class _App extends React.Component<AppProperties> {
         return (
             <div style={divStyle}>
                 <button onClick={this.onButtonClick}>Fetch Todos</button>
+
+                {this.state.fetching ? 'LOADING ...' : null}
+
                 {this.renderList()}
             </div>
         );
@@ -57,5 +100,5 @@ class _App extends React.Component<AppProperties> {
 
 export const App = connect(
     mapStoreState,
-    { fetchTodos }
+    { fetchTodos, deleteTodo }
 )(_App);
