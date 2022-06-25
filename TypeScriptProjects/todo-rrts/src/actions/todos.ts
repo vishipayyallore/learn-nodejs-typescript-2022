@@ -27,9 +27,19 @@ const sleep = (ms: number) => new Promise(
 export const fetchTodos = () => {
 
     return async (dispatch: Dispatch) => {
+
+        console.log('fetching todos');
+
+        dispatch<FetchTodosAction>({
+            type: ActionTypes.FETCH_TODOS,
+            payload: []
+        });
+
+        await sleep(500);
+
         const response = await axios.get<Todo[]>(url);
 
-        await sleep(5000);
+        console.log('fetched todos');
 
         dispatch<FetchTodosAction>({
             type: ActionTypes.FETCH_TODOS,

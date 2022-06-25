@@ -52,21 +52,18 @@ class _App extends React.Component<AppProperties, AppState> {
     componentDidUpdate(prevProps: AppProperties): void {
         console.log(`${this.state.fetching} :: ${prevProps.todos.length} :: ${this.props.todos.length}`)
 
-        // if (this.state.fetching) {
-        //     this.setState({ fetching: false });
-        // }
-
-        if (this.state.fetching && (prevProps.todos.length || this.props.todos.length)) {
+        if (!prevProps.todos.length && this.props.todos.length) {
             console.log('SETTING IT TO FALSE !');
-            if (this.state.fetching) {
-                this.setState({ fetching: false });
-            }
+            this.setState({ fetching: false });
         }
     };
 
     onButtonClick = (): void => {
-        this.setState({ fetching: true });
-        this.props.fetchTodos();
+
+        this.setState({ fetching: true }, () => {
+            this.props.fetchTodos();
+        });
+
     };
 
     onTodoClick = (id: number): void => {
@@ -85,14 +82,12 @@ class _App extends React.Component<AppProperties, AppState> {
 
     render() {
         // console.log(this.props.todos);
-
         return (
             <div style={divStyle}>
                 <button onClick={this.onButtonClick}>Fetch Todos</button>
 
-                {this.state.fetching ? 'LOADING ...' : null}
+                {this.state.fetching ? 'LOADING ...' : this.renderList()}
 
-                {this.renderList()}
             </div>
         );
     }
