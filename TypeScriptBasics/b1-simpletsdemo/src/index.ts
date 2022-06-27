@@ -13,4 +13,5 @@ console.log(`multiplyByTwo(${a}) = ${multiplyByTwo(a)}`);
 
 console.log(`mBy2(${(a + b)}) = ${mBy2((a + b))}`);
 
-var values: IMultiply = { a: 5, b: 6 };
+var values: IMultiply = { a: 15, b: 16 };
+console.log(`multiply(${values.a} * ${values.b}) = ${multiply(values.a, values.b)}`);
