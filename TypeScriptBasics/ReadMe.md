@@ -1,8 +1,18 @@
 # Learn TypeScript
 
+```json
+  "scripts": {
+    "build": "tsc",
+    "build-watch": "tsc -w",
+    "execute": "npm run build && node ./dist/index.js",
+    "start": "nodemon -w dist ./dist/index.js",
+    "dev": "concurrently -k -n \"COMPILER,NODEMON\" -c \"yellow,blue\" \"npm run build-watch\" \"npm run start\""
+  },
+```
+
 ## Multiply Demo
 
-```
+```npm
 npm init
 npm i -D typescript nodemon ts-node concurrently
 npx tsc --init

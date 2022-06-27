@@ -1,9 +1,9 @@
-
-function multiply(a: number, b: number): number {
-    return a * b;
-}
+// Importing the DEFAULT, and NAMED export from the module
+import multiply, { multiplyByTwo } from "./multiply";
 
 var a = 5;
 var b = 6;
-var result = multiply(a, b);
-console.log(`${a} * ${b} = ${result}`);
+
+console.log(`multiply(${a} * ${b}) = ${multiply(a, b)}`);
+
+console.log(`multiplyByTwo(${a}) = ${multiplyByTwo(a)}`);
