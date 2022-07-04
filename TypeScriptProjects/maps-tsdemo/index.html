@@ -5,14 +5,22 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://maps.googleapis.com/maps/api/js?key=YourAPIKey"></script>
-    <script src="./src/index.ts"></script>
     <title>Maps Demo</title>
+    <style>
+        .div_map {
+            height: 100%;
+            position: inherit!important;
+        }
+    </style>
 </head>
 
 <body>
 
-    <h1>Hello Maps !!</h1>
+    <div id="map" class="div_map"></div>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=YourGoogleAPIKey"></script>
+    <script src="./src/index.ts"></script>
+
 </body>
 
 </html>

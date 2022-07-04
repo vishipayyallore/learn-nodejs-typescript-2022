@@ -11,3 +11,8 @@ const company1 = new Company()
 console.log(company1);
 
 console.log(google);
+
+new google.maps.Map(document.getElementById('map') as HTMLElement, {
+    center: { lat: 0.0, lng: 0.0 },
+    zoom: 1,
+});
